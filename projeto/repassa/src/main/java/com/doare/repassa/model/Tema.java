@@ -19,6 +19,8 @@ public class Tema {
 		@NotNull
 		private String descricao; //descricao é referente aos temas de postagem
 		
+		private Postagem postagem;
+		
 		//get and set
 		public long getId() {
 			return id;

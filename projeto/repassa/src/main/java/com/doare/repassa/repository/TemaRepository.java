@@ -11,4 +11,6 @@ import com.doare.repassa.model.Tema;
 public interface TemaRepository extends JpaRepository<Tema, Long>{
 	
 	public List<Tema>findAllByDescricaoContainingIgnoreCase(String descricao);
+	
+	
 }
