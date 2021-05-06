@@ -24,11 +24,11 @@ public class Postagem {
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // chave primaria e auto incremente
 	private long id;
 	
-	@NotNull
+	
 	@Size(min = 1, max =500)
 	private String img1; //Link que será add no front-end
 	
-	@NotNull
+	
 	@Size(min = 1, max =500)
 	private String img2; //Link que será add no front-end
 
