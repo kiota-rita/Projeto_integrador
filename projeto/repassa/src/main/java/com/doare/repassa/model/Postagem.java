@@ -12,6 +12,8 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.URL;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.sun.istack.NotNull;
 
@@ -24,11 +26,11 @@ public class Postagem {
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // chave primaria e auto incremente
 	private long id;
 	
-	
+	@URL
 	@Size(min = 1, max =500)
 	private String img1; //Link que será add no front-end
 	
-	
+	@URL
 	@Size(min = 1, max =500)
 	private String img2; //Link que será add no front-end
 
