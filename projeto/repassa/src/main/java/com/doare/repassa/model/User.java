@@ -9,11 +9,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.sun.istack.NotNull;
-
 
 @Entity
 @Table(name = "tb_user")
@@ -22,27 +20,31 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	
+
 	@NotNull
 	private String nome;
-	
+
 	@NotNull
 	private String email;
-	
+
 	@NotNull
-	@Size (min = 8, max = 16)
 	private String senha;
 	
-	@NotNull
-	@Size (max = 255)
-	private String descricao;
 	
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+
+	private String descricao;
+
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("user")
 	private List<Postagem> postagem;
 
-	
-	
 	public long getId() {
 		return id;
 	}
@@ -75,14 +77,6 @@ public class User {
 		this.senha = senha;
 	}
 
-	public String getDescricao() {
-		return descricao;
-	}
-
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
-
 	public List<Postagem> getPostagem() {
 		return postagem;
 	}
@@ -90,7 +84,5 @@ public class User {
 	public void setPostagem(List<Postagem> postagem) {
 		this.postagem = postagem;
 	}
-	
-	
-	
+
 }
