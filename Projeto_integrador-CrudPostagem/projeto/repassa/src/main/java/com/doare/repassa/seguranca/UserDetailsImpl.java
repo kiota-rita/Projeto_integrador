@@ -1,28 +1,34 @@
 package com.doare.repassa.seguranca;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Service;
 
 import com.doare.repassa.model.User;
 
+@Service
 public class UserDetailsImpl implements UserDetails {
 
 	private static final long SerialVersionUID = 1L;
 
 	private String userName;
 	private String password;
-
+	private List<GrantedAuthority> authorities;
+	
 	public UserDetailsImpl(User user) {
 		this.userName = user.getEmail();
 		this.password = user.getSenha();
 	}
-
+	
+	public UserDetailsImpl() {}
+	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		// TODO Auto-generated method stub
-		return null;
+		return authorities;
 	}
 
 	@Override

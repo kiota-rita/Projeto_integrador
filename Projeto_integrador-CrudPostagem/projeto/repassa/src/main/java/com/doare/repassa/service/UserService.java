@@ -27,25 +27,26 @@ public class UserService {
 		return repository.save(usuario);
 	}
 
-	public Optional<UserLogin> Logar(Optional<UserLogin> email){
+	public Optional<UserLogin> Logar(Optional<UserLogin> user) {
+
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-		Optional<User> usuario = repository.findByEmail(email.get().getEmail());
-		
+		Optional<User> usuario = repository.findByEmail(user.get().getEmail());
+
 		if (usuario.isPresent()) {
-			if(encoder.matches(email.get().getSenha(), usuario.get().getSenha())) {
-			
-				String auth = email.get().getNome() + ":" + email.get().getSenha();
-				byte[] encodeAuth = Base64.encodeBase64(auth.getBytes(Charset.forName("US-ASCII")));
-				String authHeader = "Basic " + new String(encodeAuth);
+			if (encoder.matches(user.get().getSenha(), usuario.get().getSenha())) {
+
+				String auth = user.get().getEmail() + ":" + user.get().getSenha();
+				byte[] encodedAuth = Base64.encodeBase64(auth.getBytes(Charset.forName("US-ASCII")));
+				String authHeader = "Basic " + new String(encodedAuth);
+
+				user.get().setToken(authHeader);				
+				user.get().setNome(usuario.get().getNome());
+				user.get().setSenha(usuario.get().getSenha());
 				
-				email.get().setToken(authHeader);
-				email.get().setNome(usuario.get().getNome());
-				email.get().setSenha(usuario.get().getSenha());
-				
-				return email;
+				return user;
+
 			}
 		}
-		
 		return null;
-}
+	}
 }
