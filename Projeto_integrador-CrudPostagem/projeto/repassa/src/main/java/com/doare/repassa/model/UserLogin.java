@@ -1,7 +1,13 @@
 package com.doare.repassa.model;
 
-public class UserLogin {
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+public class UserLogin {
+	
+	private long id;
+	
 	private String nome;
 
 	private String email;
@@ -9,6 +15,16 @@ public class UserLogin {
 	private String senha;
 
 	private String token;
+	
+	private String foto;
+	
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
 	
 	public String getNome() {
 		return nome;
@@ -41,5 +57,14 @@ public class UserLogin {
 	public void setToken(String token) {
 		this.token = token;
 	}
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
+	
 	
 }

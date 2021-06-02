@@ -49,10 +49,8 @@ public class Postagem {
 	
 	@ManyToOne 
 	@JsonIgnoreProperties("postagem")
-	private User user;
+	private User email;
 	
-
-
 	public long getId() {
 		return id;
 	}
@@ -92,7 +90,6 @@ public class Postagem {
 		this.conteudo = conteudo;
 	}
 
-
 	public Date getData() {
 		return data;
 	}
@@ -111,9 +108,15 @@ public class Postagem {
 	public void setTema(Tema tema) {
 		this.tema = tema;
 	}
-	
-	
-	
-	
+
+
+	public User getEmail() {
+		return email;
+	}
+
+
+	public void setEmail(User email) {
+		this.email = email;
+	}
 
 }

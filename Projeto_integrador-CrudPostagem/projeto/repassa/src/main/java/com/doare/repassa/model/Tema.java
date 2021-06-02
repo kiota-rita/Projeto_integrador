@@ -1,10 +1,13 @@
 package com.doare.repassa.model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -21,9 +24,9 @@ public class Tema {
 		private String descricao; //descricao é referente aos temas de postagem
 		
 		
-		@ManyToOne
-		@JsonIgnoreProperties("postagem")
-		private Postagem postagem;
+		@OneToMany(mappedBy = "tema", cascade = CascadeType.REMOVE)
+		@JsonIgnoreProperties("tema")
+		private List<Postagem> postagem;
 		
 		//get and set
 		public long getId() {
