@@ -11,7 +11,7 @@ A repassa também promove um espaço para divulgar campanhas de assistência soc
 * Front end: Angular + Typescript + Bootstrap
 * Back end: API restful em Spring boot, Java 11
 * Banco de dados: MySQL
-* Link para o repositório back end: [respassa - Frontend](https://github.com/kiota-rita/repassa_front)
+* Link para o repositório front end: [respassa - Frontend](https://github.com/kiota-rita/repassa_front)
 
 ### 🕹 Como utilizar:
 **Configurações Iniciais:** Após ter iniciado o backend, conforme repositório citado acima, siga as instruções abaixo:
