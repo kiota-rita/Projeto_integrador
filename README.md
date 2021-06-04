@@ -15,7 +15,7 @@ A repassa também promove um espaço para divulgar campanhas de assistência soc
 
 ### 🕹 Como utilizar:
 **Configurações Iniciais:**
-Após ter iniciado o backend, conforme repositório citado acima, siga as instruções abaixo:
+##### Após ter iniciado o backend, conforme repositório citado acima, siga as instruções abaixo:
 
 * Faça a instalação do Node e rode o comando npm install;
 * Rode o comando ng serve e o frontend será iniciado no http://localhost:4200/ automaticamente.
