@@ -14,8 +14,7 @@ A repassa também promove um espaço para divulgar campanhas de assistência soc
 * Link para o repositório back end: [respassa - Frontend](https://github.com/kiota-rita/repassa_front)
 
 ### 🕹 Como utilizar:
-**Configurações Iniciais:**
-##### Após ter iniciado o backend, conforme repositório citado acima, siga as instruções abaixo:
+**Configurações Iniciais:** Após ter iniciado o backend, conforme repositório citado acima, siga as instruções abaixo:
 
 * Faça a instalação do Node e rode o comando npm install;
 * Rode o comando ng serve e o frontend será iniciado no http://localhost:4200/ automaticamente.
